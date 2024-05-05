@@ -19,7 +19,7 @@ jobs:
           releases-only: true
 
       - name: Get previous version name
-        uses: 32teeth/action-github-tag@v1
+        uses: 32teeth/action-github-tag@v1.0.7
         id: previous
 
       - name: Check confliction
