@@ -53,6 +53,13 @@ jobs:
           cpack -C Release -G DEB
           sudo chown -R runner:runner .
 
+      - name: Get archive version name
+        uses: oprypin/find-latest-tag@v1.1.2
+        id: archive
+        with:
+          repository: $GITHUB_REPOSITORY
+          releases-only: true
+
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
@@ -60,4 +67,7 @@ jobs:
           draft: false
           prerelease: false
           files: build/_CPack_Packages/Linux/DEB/*.deb
-          body: https://github.com/SoftEtherVPN/SoftEtherVPN/releases/tag/${{ steps.latest.outputs.tag }}
+          body: |
+            https://github.com/SoftEtherVPN/SoftEtherVPN/releases/tag/${{ steps.latest.outputs.tag }}
+
+            https://github.com/SoftEtherVPN/SoftEtherVPN/compare/${{ steps.archive.outputs.tag }}...${{ steps.latest.outputs.tag }}
