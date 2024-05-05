@@ -22,7 +22,7 @@ jobs:
         uses: oprypin/find-latest-tag@v1.1.2
         id: previous
         with:
-          repository: ${{ github.repositpry }}
+          repository: ${{ github.repository }}
           releases-only: true
 
       - name: Check confliction
