@@ -11,10 +11,6 @@ jobs:
       contents: write
     steps:
 
-      - name: Checkout
-        # Needed to get the latest tag for this repo
-        uses: actions/checkout@v4
-
       - name: Get latest version name
         uses: oprypin/find-latest-tag@v1.1.2
         id: latest
@@ -23,8 +19,11 @@ jobs:
           releases-only: true
 
       - name: Get previous version name
-        uses: WyriHaximus/github-action-get-previous-tag@v1
+        uses: oprypin/find-latest-tag@v1.1.2
         id: previous
+        with:
+          repository: ${{ github.repositpry }}
+          releases-only: true
 
       - name: Check confliction
         run: |
