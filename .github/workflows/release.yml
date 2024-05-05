@@ -18,12 +18,8 @@ jobs:
           repository: SoftEtherVPN/SoftEtherVPN
           releases-only: true
 
-      - name: Checkout
-        # Needed : Get previous version name
-        uses: actions/checkout@v4
-
       - name: Get previous version name
-        uses: WyriHaximus/github-action-get-previous-tag@v1
+        uses: 32teeth/action-github-tag@v1
         id: previous
 
       - name: Check confliction
