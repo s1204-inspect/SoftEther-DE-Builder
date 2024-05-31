@@ -17,15 +17,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cat <<EOL | sudo tee /etc/apt/sources.list
-          deb [arch=amd64,arm64] http://jp.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
-          deb [arch=amd64,arm64] http://jp.archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
-          deb [arch=amd64,arm64] http://jp.archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
-          deb [arch=amd64,arm64] http://security.ubuntu.com/ubuntu jammy-security main restricted universe multiverse
-          EOL
-          sudo dpkg --add-architecture arm64
           sudo apt-get update
-          sudo apt-get -y install cmake gcc g++ ninja-build libncurses5-dev libreadline-dev libsodium-dev libssl-dev make zlib1g-dev liblz4-dev libnl-genl-3-dev qemu-user-static gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libncurses5-dev:arm64 libncursesw5-dev:arm64
+          sudo apt-get -y install cmake gcc g++ ninja-build libncurses5-dev libreadline-dev libsodium-dev libssl-dev make zlib1g-dev liblz4-dev libnl-genl-3-dev qemu-user-static gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
 
       - name: Build amd64
         run: |
