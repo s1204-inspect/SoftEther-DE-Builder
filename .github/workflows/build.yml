@@ -40,7 +40,7 @@ jobs:
           set(CMAKE_C_COMPILER aarch64-linux-gnu-gcc)
           set(CMAKE_CXX_COMPILER aarch64-linux-gnu-g++)
           EOL
-          cmake -G "Ninja" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_TOOLCHAIN_FILE=../toolchain-arm64.cmake ..
+          cmake -G "Ninja" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_TOOLCHAIN_FILE=toolchain-arm64.cmake ..
           cmake --build .
           cpack -C Release -G DEB
           sudo chown -R runner:runner .
