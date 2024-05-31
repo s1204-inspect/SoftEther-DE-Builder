@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get -y install cmake gcc g++ ninja-build libncurses5-dev libreadline-dev libsodium-dev libssl-dev make zlib1g-dev liblz4-dev libnl-genl-3-dev qemu binfmt-support gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libncurses5-dev libncursesw5-dev
+          sudo apt-get -y install cmake gcc g++ ninja-build libncurses5-dev libreadline-dev libsodium-dev libssl-dev make zlib1g-dev liblz4-dev libnl-genl-3-dev qemu binfmt-support gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libncurses5-dev:arm64 libncursesw5-dev:arm64
 
       - name: Build amd64
         run: |
