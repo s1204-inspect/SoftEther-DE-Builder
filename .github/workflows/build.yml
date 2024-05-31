@@ -18,10 +18,10 @@ jobs:
       - name: Install dependencies
         run: |
           cat <<EOL | sudo tee /etc/apt/sources.list
-          deb [arch=amd64,arm64] http://archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
-          deb [arch=amd64,arm64] http://archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
-          deb [arch=amd64,arm64] http://archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
-          deb [arch=amd64,arm64] http://security.ubuntu.com/ubuntu jammy-security main restricted universe multiverse
+          deb [arch=amd64,arm64] http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
+          deb [arch=amd64,arm64] http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
+          deb [arch=amd64,arm64] http://archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
+          deb [arch=amd64,arm64] http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
           EOL
           sudo dpkg --add-architecture arm64
           sudo apt-get update
